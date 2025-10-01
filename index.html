@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Dashboard 4 em 1</title>
+  <title>Dashboard 2 em 1</title>
   <style>
     html, body {
       margin: 0;
@@ -11,14 +11,31 @@
       height: 100%;
       overflow: hidden;
       background-color: #000;
+      font-family: Arial, sans-serif;
     }
 
-    .container {
+    /* Cabeçalho fixo */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background-color: #000;
+      height: 60px;
+      padding: 0 20px;
+      border-bottom: 2px solid #222;
+    }
+
+    .header img {
+      height: 40px;
+    }
+
+    /* Container principal (2 colunas, 1 linha) */
+    .main-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-rows: 1fr;
       width: 100%;
-      height: 100%;
+      height: calc(100% - 60px); /* desconta o cabeçalho */
     }
 
     .dashboard-wrapper {
@@ -35,18 +52,18 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="dashboard-wrapper">
-      <iframe class="dashboard" src="https://analytics.zoho.com/open-view/3104972000000018352"></iframe>
-    </div>
+  <!-- Cabeçalho -->
+  <div class="header">
+    <img src="./public/logotipo_unium_white_1.png" alt="Logo da Empresa">
+  </div>
+
+  <!-- Grid dos Dashboards -->
+  <div class="main-container">
     <div class="dashboard-wrapper">
       <iframe class="dashboard" src="https://analytics.zoho.com/open-view/3104972000000004504"></iframe>
     </div>
     <div class="dashboard-wrapper">
-      <iframe class="dashboard"></iframe>
-    </div>
-    <div class="dashboard-wrapper">
-      <iframe class="dashboard"></iframe>
+      <iframe class="dashboard" src=""></iframe>
     </div>
   </div>
 </body>
